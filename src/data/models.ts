@@ -1,0 +1,1 @@
+export type Lighting = 'phong' | 'physical' | 'toon' | 'basic' | 'lambert' | 'standard';
