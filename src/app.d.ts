@@ -11,5 +11,6 @@ declare namespace App {
 declare namespace svelte.JSX {
 	interface HTMLAttributes<T> {
 		onclickOutside?: (event: any) => void;
+		onrxEmit?: (event: any) => void;
 	}
 }

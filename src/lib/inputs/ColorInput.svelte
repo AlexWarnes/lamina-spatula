@@ -1,5 +1,6 @@
 <script>
 	import { layers } from '../../data/state';
+	import { rxThrottle } from 'svelte-fuse-rx';
 	export let layerInput = true;
 	export let value;
 	export let label;
@@ -13,7 +14,12 @@
 {#if layerInput}
 	<label
 		>{label}
-		<input type="color" value={`#${value.getHexString()}`} on:input={handleColorChange} />
+		<input
+			type="color"
+			value={`#${value.getHexString()}`}
+			use:rxThrottle={{ on: 'input', duration: 150 }}
+			on:rxEmit={(e) => handleColorChange(e.detail)}
+		/>
 	</label>
 {:else}
 	<label

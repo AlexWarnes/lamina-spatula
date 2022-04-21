@@ -27,6 +27,7 @@
     "svelte": "^3.44.0",
     "svelte-check": "^2.2.6",
     "svelte-cubed": "^0.2.1",
+    "svelte-fuse-rx": "^0.0.104",
     "svelte-preprocess": "^4.10.1",
     "three": "^0.139.2",
     "tslib": "^2.3.1",
