@@ -1,8 +1,6 @@
 import { derived, writable } from 'svelte/store';
-import * as THREE from 'three';
-import { LayerMaterial, Depth, Fresnel, Noise } from 'lamina/vanilla';
 import type { LayerMaterialProps } from 'lamina/types';
-import type { Layers } from 'three';
+import { Depth, Fresnel, Noise } from 'lamina/vanilla';
 import {
 	extractDepthProps,
 	extractFresnelProps,
