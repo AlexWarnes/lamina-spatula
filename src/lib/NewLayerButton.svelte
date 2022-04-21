@@ -1,6 +1,6 @@
 <script>
 	import { addNewLayer } from '../data/state';
-	import { newDepthLayer, newFresnelLayer, newNoiseLayer } from '../data/layers';
+	import { newColorLayer, newDepthLayer, newDisplaceLayer, newFresnelLayer, newGradientLayer, newNoiseLayer } from '../data/layers';
 	import Menu from './Menu.svelte';
 	import MenuItem from './MenuItem.svelte';
 
@@ -20,7 +20,15 @@
 		},
 		{
 			name: 'Displacement',
-			action: () => console.log('test click')
+			action: () => addNewLayer(newDisplaceLayer())
+		},
+		{
+			name: 'Gradient',
+			action: () => addNewLayer(newGradientLayer())
+		},
+		{
+			name: 'Color',
+			action: () => addNewLayer(newColorLayer())
 		}
 	];
 </script>

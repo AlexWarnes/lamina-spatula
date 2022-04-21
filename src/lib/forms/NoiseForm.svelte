@@ -1,13 +1,12 @@
 <script>
 	import FormHeader from '$lib/FormHeader.svelte';
-
 	import ColorInput from '$lib/inputs/ColorInput.svelte';
 	import FloatSlider from '$lib/inputs/FloatSlider.svelte';
 	import ModeSelect from '$lib/inputs/ModeSelect.svelte';
 	import NumberInput from '$lib/inputs/NumberInput.svelte';
 	import Select from '$lib/inputs/Select.svelte';
-	import { reinstantiateLayer } from '../../data/state';
 	import Accordion from '$lib/Accordion.svelte';
+	import { reinstantiateLayer } from '../../data/state';
 
 	export let layer;
 	let open = true;
@@ -26,20 +25,20 @@
 		<ColorInput label="ColorB" value={layer.colorB} />
 		<ColorInput label="ColorC" value={layer.colorC} />
 		<ColorInput label="ColorD" value={layer.colorD} />
-		<FloatSlider label="Alpha" bind:value={layer.alpha} />
 		<NumberInput label="Scale" bind:value={layer.scale} />
 		<Select
-			label="Type"
-			options={noiseOptions}
-			bind:value={layer.type}
-			on:change={createNewInstance}
+		label="Type"
+		options={noiseOptions}
+		bind:value={layer.type}
+		on:change={createNewInstance}
 		/>
 		<Select
-			label="Mapping"
-			options={mappingOptions}
-			bind:value={layer.mapping}
-			on:change={createNewInstance}
+		label="Mapping"
+		options={mappingOptions}
+		bind:value={layer.mapping}
+		on:change={createNewInstance}
 		/>
+		<FloatSlider label="Alpha" bind:value={layer.alpha} />
 		<ModeSelect bind:value={layer.mode} on:change={createNewInstance} />
 		<!-- offset	THREE.Vector3 | [number, number, number]	[0, 0, 0] -->
 	</div>

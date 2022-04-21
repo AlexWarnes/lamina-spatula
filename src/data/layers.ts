@@ -1,5 +1,12 @@
-import type { DepthProps, FresnelProps, NoiseProps } from 'lamina/types';
-import { Depth, Fresnel, Noise } from 'lamina/vanilla';
+import type {
+	ColorProps,
+	DepthProps,
+	DisplaceProps,
+	FresnelProps,
+	GradientProps,
+	NoiseProps
+} from 'lamina/types';
+import { Color, Depth, Displace, Fresnel, Gradient, Noise } from 'lamina/vanilla';
 
 export const newDepthLayer = (props?: DepthProps) => {
 	return new Depth(props);
@@ -9,6 +16,15 @@ export const newFresnelLayer = (props?: FresnelProps) => {
 };
 export const newNoiseLayer = (props?: NoiseProps) => {
 	return new Noise(props);
+};
+export const newDisplaceLayer = (props?: DisplaceProps) => {
+	return new Displace(props);
+};
+export const newGradientLayer = (props?: GradientProps) => {
+	return new Gradient(props);
+};
+export const newColorLayer = (props?: ColorProps) => {
+	return new Color(props);
 };
 
 export const extractDepthProps = (layer): DepthProps => {
@@ -20,8 +36,20 @@ export const extractFresnelProps = (layer): FresnelProps => {
 	return { color, alpha, power, intensity, bias, mode, visible };
 };
 export const extractNoiseProps = (layer): NoiseProps => {
-	const { colorA, colorB, colorC, colorD, alpha, scale, type: type, mapping, mode, visible } = layer;
+	const { colorA, colorB, colorC, colorD, alpha, scale, type, mapping, mode, visible } = layer;
 	return { colorA, colorB, colorC, colorD, alpha, scale, type: type, mapping, mode, visible };
+};
+export const extractDisplaceProps = (layer): DisplaceProps => {
+	const { strength, scale, type, mapping, alpha, mode } = layer;
+	return { strength, scale, type, mapping, alpha, mode };
+};
+export const extractGradientProps = (layer): GradientProps => {
+	const { colorA, colorB, alpha, contrast, start, end, axes, mapping } = layer;
+	return { colorA, colorB, alpha, contrast, start, end, axes, mapping };
+};
+export const extractColorProps = (layer): ColorProps => {
+	const { color, alpha, mode } = layer;
+	return { color, alpha, mode };
 };
 
 export const mutateCommonProps = (layer, props): void => {
@@ -30,7 +58,8 @@ export const mutateCommonProps = (layer, props): void => {
 	type, mapping, and mode so must manually mutate them here.
 	Something buggy with the form-to-state interaction
 	*/
-	layer.type = props.type;
-	layer.mapping = props.mapping;
-	layer.mode = props.mode;
-}
+	layer.type ? (layer.type = props.type) : null;
+	layer.mapping ? (layer.mapping = props.mapping) : null;
+	layer.mode ? (layer.mode = props.mode) : null;
+	layer.axes ? (layer.axes = props.axes) : null;
+};

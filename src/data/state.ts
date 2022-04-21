@@ -1,9 +1,12 @@
 import { derived, writable } from 'svelte/store';
 import type { LayerMaterialProps } from 'lamina/types';
-import { Depth, Fresnel, Noise } from 'lamina/vanilla';
+import { Color, Depth, Displace, Fresnel, Gradient, Noise } from 'lamina/vanilla';
 import {
+	extractColorProps,
 	extractDepthProps,
+	extractDisplaceProps,
 	extractFresnelProps,
+	extractGradientProps,
 	extractNoiseProps,
 	mutateCommonProps
 } from './layers';
@@ -39,30 +42,51 @@ export const moveLayer = (layerID: string, dir: 'UP' | 'DOWN') =>
 	});
 export const reinstantiateLayer = (layer) => {
 	let newLayer;
-	switch (layer.constructor.name) {
-		case 'Depth':
+	switch (layer.name.toLowerCase()) {
+		case 'depth':
 			const depthProps = extractDepthProps(layer);
 			newLayer = new Depth({
 				...depthProps
 			});
 			mutateCommonProps(newLayer, depthProps);
-      break;
-		case 'Fresnel':
+			break;
+		case 'fresnel':
 			const fresnelProps = extractFresnelProps(layer);
 			newLayer = new Fresnel({
 				...fresnelProps
 			});
 			mutateCommonProps(newLayer, fresnelProps);
-      break;
-		case 'Noise':
+			break;
+		case 'noise':
 			const noiseProps = extractNoiseProps(layer);
 			newLayer = new Noise({
 				...noiseProps
 			});
 			mutateCommonProps(newLayer, noiseProps);
 			break;
+		case 'displace':
+			const displaceProps = extractDisplaceProps(layer);
+			newLayer = new Displace({
+				...displaceProps
+			});
+			mutateCommonProps(newLayer, displaceProps);
+			break;
+		case 'gradient':
+			const gradientProps = extractGradientProps(layer);
+			newLayer = new Gradient({
+				...gradientProps
+			});
+			mutateCommonProps(newLayer, gradientProps);
+			break;
+		case 'color':
+			const colorProps = extractColorProps(layer);
+			newLayer = new Color({
+				...colorProps
+			});
+			mutateCommonProps(newLayer, colorProps);
+			break;
 		default:
-			console.error('Unrecognized layer type:', layer.constructor.name);
+			console.error('Unrecognized layer name:', layer.name);
 			return;
 	}
 

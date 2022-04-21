@@ -1,28 +1,13 @@
 <script>
-	import { newDepthLayer, newFresnelLayer, newNoiseLayer } from '../data/layers';
-
-	import { layers, addNewLayer } from '../data/state';
+	import { layers } from '../data/state';
 	import BaseLayerForm from './forms/BaseLayerForm.svelte';
 	import DepthForm from './forms/DepthForm.svelte';
 	import FresnelForm from './forms/FresnelForm.svelte';
 	import NoiseForm from './forms/NoiseForm.svelte';
+	import DisplaceForm from './forms/DisplaceForm.svelte';
 	import NewLayerButton from './NewLayerButton.svelte';
-
-	let open = false;
-	const layerOptions = [
-		{
-			name: 'Depth',
-			action: () => newDepthLayer()
-		},
-		{
-			name: 'Fresnel',
-			action: () => newFresnelLayer()
-		},
-		{
-			name: 'Noise',
-			action: () => newNoiseLayer()
-		}
-	];
+	import GradientForm from './forms/GradientForm.svelte';
+	import ColorForm from './forms/ColorForm.svelte';
 </script>
 
 <div class="ctrl-wrapper">
@@ -32,14 +17,20 @@
 	<div class="ctrl-wrapper">
 		<BaseLayerForm />
 	</div>
-	{#each $layers as layer (layer.uuid)}
+	{#each $layers as layer}
 		<div class="ctrl-wrapper">
-			{#if layer.constructor.name === 'Depth'}
+			{#if layer.name.toLowerCase() === 'depth'}
 				<DepthForm {layer} />
-			{:else if layer.constructor.name === 'Fresnel'}
+			{:else if layer.name.toLowerCase() === 'fresnel'}
 				<FresnelForm {layer} />
-			{:else if layer.constructor.name === 'Noise'}
+			{:else if layer.name.toLowerCase() === 'noise'}
 				<NoiseForm {layer} />
+			{:else if layer.name.toLowerCase() === 'displace'}
+				<DisplaceForm {layer} />
+			{:else if layer.name.toLowerCase() === 'gradient'}
+				<GradientForm {layer} />
+			{:else if layer.name.toLowerCase() === 'color'}
+				<ColorForm {layer} />
 			{/if}
 		</div>
 	{/each}

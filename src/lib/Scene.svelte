@@ -14,6 +14,7 @@
 	}
 
 	$: updateMaterial($laminaData);
+	$: console.log($laminaData)
 </script>
 
 <SC.Canvas background={new THREE.Color(0x36363f)} antialias>
