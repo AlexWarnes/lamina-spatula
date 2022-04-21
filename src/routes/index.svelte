@@ -1,17 +1,19 @@
 <script>
 	import Scene from '$lib/Scene.svelte';
 	import ControlPanel from '$lib/ControlPanel.svelte';
+	import CodeViewer from '$lib/CodeViewer.svelte';
 </script>
 
 <!-- <div class="view-wrapper"> -->
-	<div class="canvas-wrapper">
-		<Scene />
-		<div class="controls-wrapper">
-			<ControlPanel />
-		</div>
+<div class="canvas-wrapper">
+	<Scene />
+	<div class="controls-wrapper">
+		<ControlPanel />
 	</div>
-<!-- </div> -->
+	<CodeViewer />
+</div>
 
+<!-- </div> -->
 <style>
 	/* .view-wrapper {
 		width: 100%;

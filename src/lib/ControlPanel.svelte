@@ -17,7 +17,7 @@
 	<div class="ctrl-wrapper">
 		<BaseLayerForm />
 	</div>
-	{#each $layers as layer}
+	{#each $layers as layer (layer.uuid)}
 		<div class="ctrl-wrapper">
 			{#if layer.name.toLowerCase() === 'depth'}
 				<DepthForm {layer} />

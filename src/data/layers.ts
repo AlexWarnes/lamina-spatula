@@ -28,28 +28,28 @@ export const newColorLayer = (props?: ColorProps) => {
 };
 
 export const extractDepthProps = (layer): DepthProps => {
-	const { colorA, colorB, alpha, near, far, origin, mapping, mode, visible } = layer;
-	return { colorA, colorB, alpha, near, far, origin, mapping, mode, visible };
+	const { colorA, colorB, alpha, near, far, origin, mapping, mode, visible, uuid } = layer;
+	return { colorA, colorB, alpha, near, far, origin, mapping, mode, visible, uuid };
 };
 export const extractFresnelProps = (layer): FresnelProps => {
-	const { color, alpha, power, intensity, bias, mode, visible } = layer;
-	return { color, alpha, power, intensity, bias, mode, visible };
+	const { color, alpha, power, intensity, bias, mode, visible, uuid } = layer;
+	return { color, alpha, power, intensity, bias, mode, visible, uuid };
 };
 export const extractNoiseProps = (layer): NoiseProps => {
-	const { colorA, colorB, colorC, colorD, alpha, scale, type, mapping, mode, visible } = layer;
-	return { colorA, colorB, colorC, colorD, alpha, scale, type: type, mapping, mode, visible };
+	const { colorA, colorB, colorC, colorD, alpha, scale, type, mapping, mode, visible, uuid } = layer;
+	return { colorA, colorB, colorC, colorD, alpha, scale, type: type, mapping, mode, visible, uuid };
 };
 export const extractDisplaceProps = (layer): DisplaceProps => {
-	const { strength, scale, type, mapping, alpha, mode } = layer;
-	return { strength, scale, type, mapping, alpha, mode };
+	const { strength, scale, type, mapping, mode, visible, uuid } = layer;
+	return { strength, scale, type, mapping, mode, visible, uuid };
 };
 export const extractGradientProps = (layer): GradientProps => {
-	const { colorA, colorB, alpha, contrast, start, end, axes, mapping } = layer;
-	return { colorA, colorB, alpha, contrast, start, end, axes, mapping };
+	const { colorA, colorB, alpha, contrast, start, end, axes, mapping, visible, uuid } = layer;
+	return { colorA, colorB, alpha, contrast, start, end, axes, mapping, visible, uuid };
 };
 export const extractColorProps = (layer): ColorProps => {
-	const { color, alpha, mode } = layer;
-	return { color, alpha, mode };
+	const { color, alpha, mode, visible, uuid } = layer;
+	return { color, alpha, mode, visible, uuid };
 };
 
 export const mutateCommonProps = (layer, props): void => {
@@ -62,4 +62,5 @@ export const mutateCommonProps = (layer, props): void => {
 	layer.mapping ? (layer.mapping = props.mapping) : null;
 	layer.mode ? (layer.mode = props.mode) : null;
 	layer.axes ? (layer.axes = props.axes) : null;
+	layer.uuid = props.uuid;
 };

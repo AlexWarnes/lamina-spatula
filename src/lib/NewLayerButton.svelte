@@ -1,6 +1,13 @@
 <script>
 	import { addNewLayer } from '../data/state';
-	import { newColorLayer, newDepthLayer, newDisplaceLayer, newFresnelLayer, newGradientLayer, newNoiseLayer } from '../data/layers';
+	import {
+		newColorLayer,
+		newDepthLayer,
+		newDisplaceLayer,
+		newFresnelLayer,
+		newGradientLayer,
+		newNoiseLayer
+	} from '../data/layers';
 	import Menu from './Menu.svelte';
 	import MenuItem from './MenuItem.svelte';
 
@@ -33,7 +40,7 @@
 	];
 </script>
 
-<button class="new-layer-btn" on:click={() => (open = !open)}>
+<button class="new-layer-btn" on:click={() => (open = !open)} aria-haspopup="menu">
 	<!-- <Layers /> -->
 	<span class="btn-label">New Layer</span>
 	<Menu bind:open position="LEFT">
@@ -60,14 +67,14 @@
 		background-color: darkcyan;
 		color: #fafbfc;
 		pointer-events: all;
-    border: 3px solid transparent;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    padding: 0.5rem;
-    cursor: pointer;
+		border: 3px solid transparent;
+		border-radius: 4px;
+		transition: all 0.2s ease;
+		padding: 0.5rem;
+		cursor: pointer;
 	}
 
-  /* .new-layer-btn:hover {
+	/* .new-layer-btn:hover {
     border: 3px solid var(--svelte-orange);
 		background-color: var(--canvas-overlay-hover);
   } */

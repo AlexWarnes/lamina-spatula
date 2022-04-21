@@ -14,6 +14,8 @@
 <div class="accordion-container" {style}>
 	<div
 		class="header"
+		role="button"
+		aria-haspopup="menu"
 		on:click
 		tabindex="0"
 		on:keydown={handleKeydown}
