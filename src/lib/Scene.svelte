@@ -43,6 +43,7 @@
 			material={laminaMaterial}
 			rotation={[0, 0, 0]}
 			scale={[1, 1, 1]}
+			position={[-1.5, 0, 0]}
 			castShadow={false}
 			receiveShadow={false}
 		/>
