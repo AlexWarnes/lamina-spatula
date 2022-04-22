@@ -1,14 +1,19 @@
-<svelte:head>
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true" />
-	<link
-		href="https://fonts.googleapis.com/css2?family=Fira+Mono&family=Overpass:wght@400;600&display=swap"
-		rel="stylesheet"
-	/>
-</svelte:head>
+<script>
+	import TopNav from '$lib/TopNav.svelte';
+</script>
 
+<TopNav />
 <slot />
 
 <style>
 	@import '../global.css';
+	/* :global(#svelte-body) {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+	} */
+	/* .content {
+		flex-grow: 1;
+	} */
 </style>

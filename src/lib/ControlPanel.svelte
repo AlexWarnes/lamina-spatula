@@ -36,16 +36,14 @@
 	{/each}
 </div>
 
-<!-- <button on:click={() => addNewLayer(newDepthLayer())}>New Depth</button>
-	<button on:click={() => addNewLayer(newFresnelLayer())}>New Fresnel</button>
-	<button on:click={() => addNewLayer(newNoiseLayer())}>New Noise</button> -->
 <style>
 	.ctrl-wrapper {
-		margin: 1rem 0;
+		margin: 1rem 0 0;
 	}
 
 	.layers-wrapper {
-		max-height: 100%;
+		max-height: calc(100% - 4rem);
 		overflow: auto;
+		padding: 0 0.25rem 0 0;
 	}
 </style>

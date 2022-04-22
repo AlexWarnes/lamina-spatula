@@ -174,8 +174,8 @@ const laminaMaterial = new LayerMaterial({
 				</div>
 
 				<p class="description">
-					Your Lamina shader material code generated for your current set of layers. You can use this as a material on
-					any three.js object.
+					Your Lamina shader material code generated for your current set of layers. You can use
+					this as a material on any three.js object.
 				</p>
 				<div class="repl-row">
 					<p class="description">
@@ -204,7 +204,6 @@ const laminaMaterial = new LayerMaterial({
 <style>
 	.code-container {
 		position: fixed;
-		top: 0;
 		left: 0;
 		max-width: 600px;
 		width: 33%;
@@ -223,7 +222,7 @@ const laminaMaterial = new LayerMaterial({
 		justify-content: center;
 		align-items: center;
 		background-color: var(--canvas-overlay);
-		border-bottom: 2px solid lightseagreen;
+		border-bottom: 2px solid darkcyan;
 		cursor: pointer;
 	}
 	.control-bar > p {
@@ -233,18 +232,18 @@ const laminaMaterial = new LayerMaterial({
 	}
 
 	.header {
-    background-color: #676778;
-    padding: 1rem;
-  }
-  .title-row {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  .header h3 {
-    margin: 0 0 0 1rem;
-  }
-	
+		background-color: #676778;
+		padding: 1rem;
+	}
+	.title-row {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.header h3 {
+		margin: 0 0 0 1rem;
+	}
+
 	.repl-row {
 		display: flex;
 		justify-content: space-between;
@@ -259,7 +258,7 @@ const laminaMaterial = new LayerMaterial({
 
 	.code-display {
 		width: 100%;
-		height: 100%;
+		height: 50vh;
 		background-color: var(--canvas-overlay);
 		font-size: 14px;
 		font-family: 'Fira Mono', monospace;
@@ -274,17 +273,6 @@ const laminaMaterial = new LayerMaterial({
 		padding: 0.25rem;
 	}
 
-	/* .code-btn {
-		border: 2px solid transparent;
-		border: 2px solid transparent;
-		padding: 0.5rem 0.75rem;
-		min-width: 5.6rem;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		cursor: pointer;
-	} */
-
 	.copy-btn {
 		border: 2px solid transparent;
 		border: 2px solid transparent;
@@ -296,7 +284,7 @@ const laminaMaterial = new LayerMaterial({
 		cursor: pointer;
 	}
 	.copy-btn.success {
-		border: 2px solid lightseagreen;
+		border: 2px solid darkcyan;
 	}
 
 	.icon-wrapper {

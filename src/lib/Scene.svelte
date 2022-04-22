@@ -14,7 +14,7 @@
 	}
 
 	$: updateMaterial($laminaData);
-	$: console.log($laminaData)
+	$: console.log($laminaData);
 </script>
 
 <SC.Canvas background={new THREE.Color(0x36363f)} antialias>
@@ -43,7 +43,7 @@
 			material={laminaMaterial}
 			rotation={[0, 0, 0]}
 			scale={[1, 1, 1]}
-			position={[-1.5, 0, 0]}
+			position={[0, 0, 0]}
 			castShadow={false}
 			receiveShadow={false}
 		/>
