@@ -12,7 +12,7 @@
 		</li>
 		<span class="spacer" />
 		<li>
-			<a href="/about">ABOUT</a>
+			<a href="/canvas">CANVAS</a>
 		</li>
 		<li class="last">
 			<a href="https://github.com/AlexWarnes/lamina-spatula">

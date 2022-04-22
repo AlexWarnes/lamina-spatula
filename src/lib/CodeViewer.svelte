@@ -168,14 +168,13 @@ const laminaMaterial = new LayerMaterial({
 		<div class="code-display" transition:slide>
 			<div class="header">
 				<div class="title-row">
-					<!-- <SvelteLogo height="18" /> -->
 					<span>&#127856</span>
-					<h3>Your Lamina Material Code</h3>
+					<h3>Your Lamina Code</h3>
 				</div>
 
 				<p class="description">
-					Your Lamina shader material code generated for your current set of layers. You can use
-					this as a material on any three.js object.
+					Lamina shader material code generated for your current set of layers. You can use this as
+					a material on any three.js object.
 				</p>
 				<div class="repl-row">
 					<p class="description">
