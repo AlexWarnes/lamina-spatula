@@ -17,7 +17,7 @@
 	}
 </script>
 
-<Accordion {open} on:click={() => (open = !open)} title="Depth">
+<Accordion {layer} {open} on:click={() => (open = !open)} title="Depth">
 	<div class="control-group">
 		<FormHeader layerID={layer.uuid} />
 		<ColorInput label="ColorA" value={layer.colorA} />

@@ -17,7 +17,7 @@
 </script>
 
 <!-- colorA, colorB, alpha, contrast, start, end, axes, mapping -->
-<Accordion {open} on:click={() => (open = !open)} title="Gradient">
+<Accordion {layer} {open} on:click={() => (open = !open)} title="Gradient">
 	<div class="control-group">
 		<FormHeader layerID={layer.uuid} />
 		<ColorInput label="ColorA" value={layer.colorA} />

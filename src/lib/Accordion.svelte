@@ -1,9 +1,11 @@
 <script lang="ts">
 	import { slide } from 'svelte/transition';
 	import ChevronRight from '$lib/icons/ChevronRight.svelte';
+	import VisibilityCheckbox from './inputs/VisibilityCheckbox.svelte';
 	export let title: string = '';
 	export let open: boolean = false;
 	export let style: string = '';
+	export let layer = null;
 	const handleKeydown = (evt) => {
 		if (evt && evt.code && evt.code === 'Enter') {
 			open = !open;
@@ -20,6 +22,9 @@
 		tabindex="0"
 		on:keydown={handleKeydown}
 	>
+		{#if layer}
+			<VisibilityCheckbox {layer} />
+		{/if}
 		<p>{title}</p>
 		<span class="icon-wrapper" class:open>
 			<ChevronRight height="16" />

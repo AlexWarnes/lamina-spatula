@@ -15,7 +15,7 @@
 	}
 </script>
 
-<Accordion {open} on:click={() => (open = !open)} title="Displace">
+<Accordion {layer} {open} on:click={() => (open = !open)} title="Displace">
 	<div class="control-group">
 		<FormHeader layerID={layer.uuid} />
 		<NumberInput label="Strength" bind:value={layer.strength} />

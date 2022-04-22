@@ -18,7 +18,7 @@
 	}
 </script>
 
-<Accordion {open} on:click={() => (open = !open)} title="Noise">
+<Accordion {layer} {open} on:click={() => (open = !open)} title="Noise">
 	<div class="control-group">
 		<FormHeader layerID={layer.uuid} />
 		<ColorInput label="ColorA" value={layer.colorA} />
@@ -27,16 +27,16 @@
 		<ColorInput label="ColorD" value={layer.colorD} />
 		<NumberInput label="Scale" bind:value={layer.scale} />
 		<Select
-		label="Type"
-		options={noiseOptions}
-		bind:value={layer.type}
-		on:change={createNewInstance}
+			label="Type"
+			options={noiseOptions}
+			bind:value={layer.type}
+			on:change={createNewInstance}
 		/>
 		<Select
-		label="Mapping"
-		options={mappingOptions}
-		bind:value={layer.mapping}
-		on:change={createNewInstance}
+			label="Mapping"
+			options={mappingOptions}
+			bind:value={layer.mapping}
+			on:change={createNewInstance}
 		/>
 		<FloatSlider label="Alpha" bind:value={layer.alpha} />
 		<ModeSelect bind:value={layer.mode} on:change={createNewInstance} />

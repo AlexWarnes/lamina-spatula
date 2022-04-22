@@ -17,7 +17,7 @@
 	$: console.log($laminaData);
 </script>
 
-<SC.Canvas background={new THREE.Color(0x36363f)} antialias>
+<SC.Canvas background={new THREE.Color("#36363f")} antialias>
 	<SC.PerspectiveCamera position={[0, 5, 8]} near={0.1} far={400} fov={55} />
 
 	<SC.OrbitControls
