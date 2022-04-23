@@ -20,7 +20,7 @@
 	</header>
 
 	<section>
-		<h2>What is this? <span>&#127856</span></h2>
+		<h2>What is spatula?</h2>
 		<p>
 			Spatula is a browser-based tool for building materials with lamina, without needing to start
 			up a project. Inspired by the official lamina debugger, it allows for layer editing and
@@ -73,13 +73,13 @@
 		padding: 0 0 3rem 0;
 	}
 	header {
-		background: salmon;
+		background: #fafbfc;
 		padding: 10%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background-image: url('./CornerShapes.svg');
+		background-image: url('/CornerShapes.svg');
 		height: 80vh;
 		background-repeat: no-repeat;
 		background-size: cover;
