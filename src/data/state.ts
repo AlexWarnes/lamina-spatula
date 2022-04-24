@@ -11,10 +11,20 @@ import {
 	mutateCommonProps
 } from './layers';
 
+const defaultSceneSettings = {
+	background: '#36363f',
+	autoRotate: false,
+	directionalLight: true,
+	ambientLight: true,
+	showGrid: false,
+}
 const defaultBaseLayer: LayerMaterialProps = {
 	color: '#d9d9d9',
 	lighting: 'standard'
 };
+
+// TODO: throttle changes to base and scene color inputs
+export const sceneSettings = writable(defaultSceneSettings);
 export const baseLayer = writable<LayerMaterialProps>(defaultBaseLayer);
 export const layers = writable<any[]>([]);
 export const laminaData = derived([baseLayer, layers], ([$baseLayer, $layers]) => {

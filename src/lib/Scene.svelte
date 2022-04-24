@@ -1,7 +1,7 @@
 <script>
 	import * as THREE from 'three';
 	import * as SC from 'svelte-cubed';
-	import { laminaData } from '../data/state';
+	import { laminaData, sceneSettings } from '../data/state';
 	import { LayerMaterial } from 'lamina/vanilla';
 
 	let laminaMaterial;
@@ -14,28 +14,29 @@
 	}
 
 	$: updateMaterial($laminaData);
-	$: console.log($laminaData);
 </script>
 
-<SC.Canvas background={new THREE.Color("#36363f")} antialias>
+<SC.Canvas background={new THREE.Color($sceneSettings.background)} antialias>
 	<SC.PerspectiveCamera position={[0, 5, 8]} near={0.1} far={400} fov={55} />
 
 	<SC.OrbitControls
 		enabled={true}
 		enableZoom={true}
-		autoRotate={false}
+		autoRotate={$sceneSettings.autoRotate}
 		autoRotateSpeed={2}
 		enableDamping={true}
 		dampingFactor={0.1}
 	/>
 
-	<SC.DirectionalLight
-		color={new THREE.Color(0xffffff)}
-		position={[0, 10, 10]}
-		intensity={0.5}
-		shadow={false}
-	/>
-	<SC.AmbientLight color={new THREE.Color('0xffffff')} intensity={0.5} />
+	{#if $sceneSettings.directionalLight}
+		<SC.DirectionalLight color={new THREE.Color('#ffffff')} position={[0, 10, 10]} intensity={0.75} />
+	{/if}
+	{#if $sceneSettings.ambientLight}
+		<SC.AmbientLight color={new THREE.Color('#ffffff')} intensity={0.5} />
+	{/if}
+	{#if $sceneSettings.showGrid}
+		<SC.Primitive object={new THREE.GridHelper(50, 50)} position={[0, 0.001, 0]} />
+	{/if}
 
 	{#if laminaMaterial}
 		<SC.Mesh

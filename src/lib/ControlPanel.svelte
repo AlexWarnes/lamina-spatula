@@ -8,12 +8,16 @@
 	import NewLayerButton from './NewLayerButton.svelte';
 	import GradientForm from './forms/GradientForm.svelte';
 	import ColorForm from './forms/ColorForm.svelte';
+	import SceneForm from './forms/SceneForm.svelte';
 </script>
 
 <div class="ctrl-wrapper">
 	<NewLayerButton />
 </div>
 <div class="layers-wrapper">
+	<div class="ctrl-wrapper">
+		<SceneForm />
+	</div>
 	<div class="ctrl-wrapper">
 		<BaseLayerForm />
 	</div>
