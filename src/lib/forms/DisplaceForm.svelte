@@ -4,6 +4,7 @@
 	import Select from '$lib/inputs/Select.svelte';
 	import Accordion from '$lib/Accordion.svelte';
 	import { reinstantiateLayer } from '../../data/state';
+import Vec3Input from '$lib/inputs/Vec3Input.svelte';
 
 	export let layer;
 	let open = true;
@@ -20,6 +21,7 @@
 		<FormHeader layerID={layer.uuid} />
 		<NumberInput label="Strength" bind:value={layer.strength} />
 		<NumberInput label="Scale" bind:value={layer.scale} />
+		<Vec3Input groupLabel="Offset" bind:value={layer.offset} />
 		<Select
 			label="Type"
 			options={displaceOptions}
@@ -32,6 +34,5 @@
 			bind:value={layer.mapping}
 			on:change={createNewInstance}
 		/>
-		<!-- OFFSET -->
 	</div>
 </Accordion>

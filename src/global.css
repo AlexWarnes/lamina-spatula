@@ -37,16 +37,25 @@ body,
 	width: 100%;
 }
 
+.control-group label.vec3 {
+	flex-direction: column;
+	width: 25%;
+}
+input.vec3 {
+	display: block;
+	width: 3rem;
+}
+
 ::-webkit-scrollbar {
-  width: 0.25rem;
-  height: 0.25rem;
+	width: 0.25rem;
+	height: 0.25rem;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--threejs-black);
+	background: var(--threejs-black);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #fafbfc35;
-  opacity: 0.5;
+	background: #fafbfc35;
+	opacity: 0.5;
 }

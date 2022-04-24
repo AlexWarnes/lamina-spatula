@@ -26,7 +26,7 @@
 			action: () => addNewLayer(newNoiseLayer())
 		},
 		{
-			name: 'Displacement',
+			name: 'Displace',
 			action: () => addNewLayer(newDisplaceLayer())
 		},
 		{
@@ -41,7 +41,6 @@
 </script>
 
 <button class="new-layer-btn" on:click={() => (open = !open)} aria-haspopup="menu">
-	<!-- <Layers /> -->
 	<span class="btn-label">New Layer</span>
 	<Menu bind:open position="LEFT">
 		{#each layerOptions as layer (layer.name)}
@@ -55,9 +54,6 @@
 	</Menu>
 </button>
 
-<!-- <button on:click={() => addNewLayer(newDepthLayer())}>New Depth</button>
-	<button on:click={() => addNewLayer(newFresnelLayer())}>New Fresnel</button>
-	<button on:click={() => addNewLayer(newNoiseLayer())}>New Noise</button> -->
 <style>
 	.new-layer-btn {
 		position: relative;
@@ -74,8 +70,4 @@
 		cursor: pointer;
 	}
 
-	/* .new-layer-btn:hover {
-    border: 3px solid var(--svelte-orange);
-		background-color: var(--canvas-overlay-hover);
-  } */
 </style>

@@ -36,12 +36,12 @@ export const extractFresnelProps = (layer): FresnelProps => {
 	return { color, alpha, power, intensity, bias, mode, visible, uuid };
 };
 export const extractNoiseProps = (layer): NoiseProps => {
-	const { colorA, colorB, colorC, colorD, alpha, scale, type, mapping, mode, visible, uuid } = layer;
-	return { colorA, colorB, colorC, colorD, alpha, scale, type: type, mapping, mode, visible, uuid };
+	const { colorA, colorB, colorC, colorD, alpha, scale, type, offset, mapping, mode, visible, uuid } = layer;
+	return { colorA, colorB, colorC, colorD, alpha, scale, type, offset, mapping, mode, visible, uuid };
 };
 export const extractDisplaceProps = (layer): DisplaceProps => {
-	const { strength, scale, type, mapping, mode, visible, uuid } = layer;
-	return { strength, scale, type, mapping, mode, visible, uuid };
+	const { strength, scale, type, offset, mapping, mode, visible, uuid } = layer;
+	return { strength, scale, type, offset, mapping, mode, visible, uuid };
 };
 export const extractGradientProps = (layer): GradientProps => {
 	const { colorA, colorB, alpha, contrast, start, end, axes, mapping, visible, uuid } = layer;

@@ -22,11 +22,12 @@
 	<section>
 		<h2>What is spatula?</h2>
 		<p>
-			Spatula is a browser-based tool for building materials with lamina, without needing to start
-			up a project. Inspired by the official lamina debugger, it allows for layer editing and
-			generates the JavaScript for your material. You can use that code as a material in any project
-			that uses lamina and threejs. Learn more of the technical details in the GitHub repo:
+			Spatula is a side project I made to learn more about shaders using lamina. It's a tool for
+			building shader materials without the need to stand up a new project. Inspired by the official
+			lamina debugger, it allows for layer editing and generates the JavaScript for your material.
+			You can use that code as a material in any project that uses lamina and threejs.
 		</p>
+		<p>Made with SvelteKit, lamina, threejs, svelte-cubed, and RxJS</p>
 		<a href="https://github.com/AlexWarnes/lamina-spatula">
 			<span>GitHub Repo</span>
 			<ChevronRight height="16" />
@@ -44,9 +45,16 @@
 		</a>
 	</section>
 	<section>
-		<h2>Why does the code viewer link to a Svelte REPL?</h2>
-		<p>Because I like using Svelte! (this site was made with Svelte)</p>
-		<p>But you can use your code anywhere you're using lamina and threejs.</p>
+		<h2>Where can I use the generated code?</h2>
+		<p>Anywhere you're using lamina and threejs!</p>
+		<p>vanilla js:</p>
+		<code>{`const mesh = new THREE.Mesh(geometry, laminaMaterial)`}</code>
+		<p>svelte-cubed:</p>
+		<code>{`<SC.Mesh {geometry} material={laminaMaterial} />`}</code>
+		<a href="https://svelte.dev/">
+			<span>Learn Svelte</span>
+			<ChevronRight height="16" />
+		</a>
 		<a href="https://svelte.dev/">
 			<span>Learn Svelte</span>
 			<ChevronRight height="16" />
@@ -55,14 +63,33 @@
 			<span>Learn Svelte-Cubed</span>
 			<ChevronRight height="16" />
 		</a>
+
+		<p style="margin: 2rem 0 1rem">
+			While Spatula is for creating materials, I made a separate tool for creating 3d scenes with
+			and generating code called SC3 Lab.
+		</p>
+		<a href="https://sc3-lab.netlify.app/">
+			<span>Try SC3-Lab</span>
+			<ChevronRight height="16" />
+		</a>
 	</section>
 	<section>
 		<h2>What if I'm using React?</h2>
 		<p>
 			If you have a react-three-fiber project, you'll be better off using lamina's r3f imports
 			instead of the vanilla js code. The official debugger allows more fine tuning and JSX code
-			copying.
+			copying. There's a whole suite of amazing tools available for r3f from the Poimandres
+			collective.
 		</p>
+
+		<a href="https://codesandbox.io/embed/github/pmndrs/lamina/tree/main/examples/layer-materials">
+			<span>Official lamina Debugger</span>
+			<ChevronRight height="16" />
+		</a>
+		<a href="https://github.com/pmndrs">
+			<span>Poimandres GitHub</span>
+			<ChevronRight height="16" />
+		</a>
 	</section>
 </div>
 
@@ -103,6 +130,7 @@
 		text-align: center;
 	}
 	a {
+		margin: .875rem auto;
 		padding: 0.5rem 0.75rem;
 		border: none;
 		border-radius: 4px;
@@ -126,13 +154,26 @@
 	a.canvas-link {
 		background-color: darkcyan;
 		font-size: 1rem;
-    padding: 1rem 1.5rem;
+		padding: 1rem 1.5rem;
 	}
 
 	section {
 		width: 100%;
-		max-width: 500px;
+		max-width: 600px;
 		margin: 0 auto;
 		padding: 0 1rem 2rem;
+	}
+
+	code {
+		width: 100%;
+		background-color: #F1F3F4;
+		overflow: auto;
+		border-radius: 2px;
+		padding: 0.875rem;
+		font-size: 14px;
+		font-family: 'Fira Mono', monospace;
+		/* color: #fafbfc; */
+		display: block;
+    margin: 1rem auto;
 	}
 </style>

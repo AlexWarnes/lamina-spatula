@@ -7,6 +7,7 @@
 	import NumberInput from '$lib/inputs/NumberInput.svelte';
 	import Accordion from '$lib/Accordion.svelte';
 	import { reinstantiateLayer } from '../../data/state';
+import Vec3Input from '$lib/inputs/Vec3Input.svelte';
 	
 	export let layer;
 	let open = true;
@@ -24,6 +25,7 @@
 		<ColorInput label="ColorB" value={layer.colorB} />
 		<NumberInput label="Near" bind:value={layer.near} />
 		<NumberInput label="Far" bind:value={layer.far} />
+		<Vec3Input groupLabel="Origin" bind:value={layer.origin} />
 		<Select
 		label="Mapping"
 		options={mappingOptions}
@@ -32,6 +34,5 @@
 		/>
 		<FloatSlider label="Alpha" bind:value={layer.alpha} />
 		<ModeSelect bind:value={layer.mode} on:change={createNewInstance} />
-		<!-- ORIGIN -->
 	</div>
 </Accordion>
