@@ -24,5 +24,9 @@
 			Grid
 			<input type="checkbox" bind:checked={$sceneSettings.showGrid} />
 		</label>
+		<label>
+			ACES Filmic Tone Mapping
+			<input type="checkbox" bind:checked={$sceneSettings.ACESFilmicToneMapping} />
+		</label>
 	</section>
 </Accordion>

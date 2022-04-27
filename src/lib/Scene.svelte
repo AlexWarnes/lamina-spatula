@@ -16,7 +16,11 @@
 	$: updateMaterial($laminaData);
 </script>
 
-<SC.Canvas background={new THREE.Color($sceneSettings.background)} antialias>
+<SC.Canvas
+	toneMapping={$sceneSettings.ACESFilmicToneMapping ? THREE.ACESFilmicToneMapping : THREE.NoToneMapping}
+	background={new THREE.Color($sceneSettings.background)}
+	antialias
+>
 	<SC.PerspectiveCamera position={[0, 5, 8]} near={0.1} far={400} fov={55} />
 
 	<SC.OrbitControls
@@ -29,7 +33,11 @@
 	/>
 
 	{#if $sceneSettings.directionalLight}
-		<SC.DirectionalLight color={new THREE.Color('#ffffff')} position={[0, 10, 10]} intensity={0.75} />
+		<SC.DirectionalLight
+			color={new THREE.Color('#ffffff')}
+			position={[0, 10, 10]}
+			intensity={0.75}
+		/>
 	{/if}
 	{#if $sceneSettings.ambientLight}
 		<SC.AmbientLight color={new THREE.Color('#ffffff')} intensity={0.5} />

@@ -36,8 +36,34 @@ export const extractFresnelProps = (layer): FresnelProps => {
 	return { color, alpha, power, intensity, bias, mode, visible, uuid };
 };
 export const extractNoiseProps = (layer): NoiseProps => {
-	const { colorA, colorB, colorC, colorD, alpha, scale, type, offset, mapping, mode, visible, uuid } = layer;
-	return { colorA, colorB, colorC, colorD, alpha, scale, type, offset, mapping, mode, visible, uuid };
+	const {
+		colorA,
+		colorB,
+		colorC,
+		colorD,
+		alpha,
+		scale,
+		type,
+		offset,
+		mapping,
+		mode,
+		visible,
+		uuid
+	} = layer;
+	return {
+		colorA,
+		colorB,
+		colorC,
+		colorD,
+		alpha,
+		scale,
+		type,
+		offset,
+		mapping,
+		mode,
+		visible,
+		uuid
+	};
 };
 export const extractDisplaceProps = (layer): DisplaceProps => {
 	const { strength, scale, type, offset, mapping, mode, visible, uuid } = layer;
@@ -53,14 +79,13 @@ export const extractColorProps = (layer): ColorProps => {
 };
 
 export const mutateCommonProps = (layer, props): void => {
+	if (!props) return;
 	/* 
-	I have no idea why all the props transfer except for 
-	type, mapping, and mode so must manually mutate them here.
-	Something buggy with the form-to-state interaction
+	Must manually mutate some props here bc of a little bug.
 	*/
-	layer.type ? (layer.type = props.type) : null;
-	layer.mapping ? (layer.mapping = props.mapping) : null;
-	layer.mode ? (layer.mode = props.mode) : null;
-	layer.axes ? (layer.axes = props.axes) : null;
-	layer.uuid = props.uuid;
+	for (let [k, v] of Object.entries(props)) {
+		if (layer.hasOwnProperty(k)) {
+			layer[k] = v;
+		}
+	}	
 };

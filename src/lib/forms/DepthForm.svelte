@@ -25,7 +25,7 @@ import Vec3Input from '$lib/inputs/Vec3Input.svelte';
 		<ColorInput label="ColorB" value={layer.colorB} />
 		<NumberInput label="Near" bind:value={layer.near} />
 		<NumberInput label="Far" bind:value={layer.far} />
-		<Vec3Input groupLabel="Origin" bind:value={layer.origin} />
+		<Vec3Input min={-100} groupLabel="Origin" bind:value={layer.origin} />
 		<Select
 		label="Mapping"
 		options={mappingOptions}

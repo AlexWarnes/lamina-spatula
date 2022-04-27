@@ -10,6 +10,7 @@ import {
 	extractNoiseProps,
 	mutateCommonProps
 } from './layers';
+import { rxWritable } from 'svelte-fuse-rx';
 
 const defaultSceneSettings = {
 	background: '#36363f',
@@ -17,6 +18,9 @@ const defaultSceneSettings = {
 	directionalLight: true,
 	ambientLight: true,
 	showGrid: false,
+	ACESFilmicToneMapping: false,
+	// TODO optional:
+	// renderer.outputEncoding = THREE.sRGBEncoding;
 }
 const defaultBaseLayer: LayerMaterialProps = {
 	color: '#d9d9d9',
@@ -112,4 +116,13 @@ export const reinstantiateLayer = (layer) => {
 	});
 };
 
-export const layerAction = writable<{ uuid: string; key: string; value: any }>(null);
+
+export const cookRecipe = (recipe) => {
+	sceneSettings.set({...defaultSceneSettings, ...recipe.scene});
+	baseLayer.set({...defaultBaseLayer, ...recipe.baseLayer});
+	
+	recipe.layers.forEach((l, idx) => {
+		mutateCommonProps(l, recipe.layerProps[idx])
+	})
+	layers.set(recipe.layers);
+}

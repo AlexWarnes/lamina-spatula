@@ -1,5 +1,5 @@
 <script>
-	import { layers } from '../data/state';
+	import { layers, cookRecipe } from '../data/state';
 	import BaseLayerForm from './forms/BaseLayerForm.svelte';
 	import DepthForm from './forms/DepthForm.svelte';
 	import FresnelForm from './forms/FresnelForm.svelte';
@@ -9,10 +9,12 @@
 	import GradientForm from './forms/GradientForm.svelte';
 	import ColorForm from './forms/ColorForm.svelte';
 	import SceneForm from './forms/SceneForm.svelte';
+	// import { eclipse, laminaPink, partlyCloudy, laminaBubble, laminaMarble, whiteNoise, laminaSparkles} from '../data/recipes';
 </script>
 
 <div class="ctrl-wrapper">
 	<NewLayerButton />
+	<!-- <button on:click={() => cookRecipe(laminaSparkles)}>Recipes</button> -->
 </div>
 <div class="layers-wrapper">
 	<div class="ctrl-wrapper">
