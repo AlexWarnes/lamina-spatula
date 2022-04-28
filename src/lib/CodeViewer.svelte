@@ -36,15 +36,9 @@
 		}
 
 		if(opt.includeLaminaImport){
-			imports += `\nimport { \n\tLayerMaterial,\n\t${[...new Set(layerImports)].join(',\n\t')}\n} from "lamina/vanilla;`
+			imports += `\nimport { \n\tLayerMaterial,\n\t${[...new Set(layerImports)].join(',\n\t')}\n} from "lamina/vanilla";`
 		}
 		return imports;
-// 		return `
-// import * as THREE from "three";
-// import { 
-// LayerMaterial, 
-// ${[...new Set(layerImports)].join(',\n')}
-// } from "lamina/vanilla";`;
 	}
 
 	function stringifyMaterial({ baseLayer, layers }) {
