@@ -13,6 +13,10 @@
 	import ChevronRight from './icons/ChevronRight.svelte';
 	import Copy from './icons/Copy.svelte';
 	let displayCode = false;
+	const options = {
+		includeThreeImport: true,
+		includeLaminaImport: true
+	}
 	const handleKeydown = (evt) => {
 		if (evt && evt.code && evt.code === 'Enter') {
 			displayCode = !displayCode;
@@ -24,14 +28,23 @@
 		return `new THREE.Color("#${c.getHexString()}")`;
 	};
 
-	function stringifyImports({ layers }) {
+	function stringifyImports({ layers }, opt) {
 		let layerImports = layers.map((l) => l.name[0].toUpperCase() + l.name.substring(1));
-		return `
-import * as THREE from "three";
-import { 
-LayerMaterial, 
-${layerImports.join(',\n')}
-} from "lamina/vanilla";`;
+		let imports = ''
+		if(opt.includeThreeImport) {
+			imports += '\nimport * as THREE from "three";\n'
+		}
+
+		if(opt.includeLaminaImport){
+			imports += `\nimport { \n\tLayerMaterial,\n\t${[...new Set(layerImports)].join(',\n\t')}\n} from "lamina/vanilla;`
+		}
+		return imports;
+// 		return `
+// import * as THREE from "three";
+// import { 
+// LayerMaterial, 
+// ${[...new Set(layerImports)].join(',\n')}
+// } from "lamina/vanilla";`;
 	}
 
 	function stringifyMaterial({ baseLayer, layers }) {
@@ -194,9 +207,19 @@ const laminaMaterial = new LayerMaterial({
 					</button>
 				</div>
 			</div>
+			<div class="options">
+				<label>
+					import threejs
+					<input type="checkbox" bind:checked={options.includeThreeImport}>
+				</label>
+				<label>
+					import lamina
+					<input type="checkbox" bind:checked={options.includeLaminaImport}>
+				</label>
+			</div>
 
 			<pre id="code-wrapper">
-        {stringifyImports($laminaData)}
+        {stringifyImports($laminaData, options)}
         {stringifyMaterial($laminaData)}
     </pre>
 		</div>
@@ -209,7 +232,7 @@ const laminaMaterial = new LayerMaterial({
 		left: 0;
 		max-width: 600px;
 		width: 33%;
-		max-height: 50%;
+		max-height: calc(100% - var(--top-nav-height));
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
@@ -260,7 +283,12 @@ const laminaMaterial = new LayerMaterial({
 
 	.code-display {
 		width: 100%;
-		height: 50vh;
+		max-height: calc(100% - var(--top-nav-height));
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
 		background-color: var(--canvas-overlay);
 		font-size: 14px;
 		font-family: 'Fira Mono', monospace;
@@ -270,9 +298,11 @@ const laminaMaterial = new LayerMaterial({
 	#code-wrapper {
 		width: 100%;
 		background-color: #16161c;
-		height: 50%;
+		/* height: 50%; */
 		overflow: auto;
 		padding: 0.25rem;
+		tab-size: 2;
+		margin-top: 0;
 	}
 
 	.copy-btn {
@@ -294,5 +324,16 @@ const laminaMaterial = new LayerMaterial({
 	}
 	.icon-wrapper.open {
 		transform: rotate(90deg);
+	}
+
+	.options {
+		display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+		width: 100%;
+		margin: 0.75rem 0 0.25rem;
+	}
+	.options label {
+		font-size: 0.75rem;
 	}
 </style>

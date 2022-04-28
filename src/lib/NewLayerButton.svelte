@@ -41,7 +41,7 @@
 </script>
 
 <button class="new-layer-btn" on:click={() => (open = !open)} aria-haspopup="menu">
-	<span class="btn-label">New Layer</span>
+	<span class="btn-label">+ Add Layer</span>
 	<Menu bind:open position="LEFT">
 		{#each layerOptions as layer (layer.name)}
 			<MenuItem

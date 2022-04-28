@@ -66,3 +66,17 @@ input.vec3 {
 	border: none !important;
 	box-shadow: 2px 2px 18px black !important;
 }
+
+.dialog-backdrop {
+	animation: FadeIn 200ms ease 0s 1 forwards;
+}
+
+@keyframes FadeIn {
+	from {
+		opacity: 0;
+	};
+
+	to {
+		opacity: 1;
+	}
+}

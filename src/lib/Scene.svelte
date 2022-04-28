@@ -48,7 +48,7 @@
 
 	{#if laminaMaterial}
 		<SC.Mesh
-			geometry={new THREE.SphereBufferGeometry()}
+			geometry={new THREE.SphereBufferGeometry(1, 64, 32)}
 			material={laminaMaterial}
 			rotation={[0, 0, 0]}
 			scale={[1, 1, 1]}
