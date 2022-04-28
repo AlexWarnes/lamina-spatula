@@ -16,7 +16,7 @@
 	const options = {
 		includeThreeImport: true,
 		includeLaminaImport: true
-	}
+	};
 	const handleKeydown = (evt) => {
 		if (evt && evt.code && evt.code === 'Enter') {
 			displayCode = !displayCode;
@@ -30,13 +30,15 @@
 
 	function stringifyImports({ layers }, opt) {
 		let layerImports = layers.map((l) => l.name[0].toUpperCase() + l.name.substring(1));
-		let imports = ''
-		if(opt.includeThreeImport) {
-			imports += '\nimport * as THREE from "three";\n'
+		let imports = '';
+		if (opt.includeThreeImport) {
+			imports += '\nimport * as THREE from "three";\n';
 		}
 
-		if(opt.includeLaminaImport){
-			imports += `\nimport { \n\tLayerMaterial,\n\t${[...new Set(layerImports)].join(',\n\t')}\n} from "lamina/vanilla";`
+		if (opt.includeLaminaImport) {
+			imports += `\nimport { \n\tLayerMaterial,\n\t${[...new Set(layerImports)].join(
+				',\n\t'
+			)}\n} from "lamina/vanilla";`;
 		}
 		return imports;
 	}
@@ -187,13 +189,23 @@ const laminaMaterial = new LayerMaterial({
 					a material on any three.js object.
 				</p>
 				<div class="repl-row">
-					<p class="description">
-						Try it in the <a
-							href="https://svelte.dev/repl/d1116e7de31c479facf07a6210406143?version=3.47.0"
+					<ul class="try-it">
+						<p class="description">Try it with:</p>
+						<li>
+							<a
+							href="https://codesandbox.io/s/hello-world-lamina-svelte-ymg0h5"
 							target="_blank"
-							rel="noopener noreferrer">Svelte REPL</a
+							rel="noopener noreferrer">Svelte Cubed</a
 						>
-					</p>
+						</li>
+						<li>
+							<a
+							href="https://codesandbox.io/s/hello-world-lamina-three-6qso8i"
+							target="_blank"
+							rel="noopener noreferrer">Vanilla Three</a
+						>	
+						</li>
+					</ul>
 
 					<button on:click={clickToCopy} class:success={copyStatus === 'SUCCESS'} class="copy-btn">
 						<Copy height="16" />
@@ -204,11 +216,11 @@ const laminaMaterial = new LayerMaterial({
 			<div class="options">
 				<label>
 					import threejs
-					<input type="checkbox" bind:checked={options.includeThreeImport}>
+					<input type="checkbox" bind:checked={options.includeThreeImport} />
 				</label>
 				<label>
 					import lamina
-					<input type="checkbox" bind:checked={options.includeLaminaImport}>
+					<input type="checkbox" bind:checked={options.includeLaminaImport} />
 				</label>
 			</div>
 
@@ -261,6 +273,20 @@ const laminaMaterial = new LayerMaterial({
 	}
 	.header h3 {
 		margin: 0 0 0 1rem;
+	}
+
+	ul.try-it .description {
+		margin: 0 0 0.5rem;
+	}
+
+	ul.try-it {
+		margin: 0;
+		padding: 0;
+    list-style: none;
+	}
+
+	ul.try-it li {
+		margin: 0.5rem 0;
 	}
 
 	.repl-row {
@@ -322,8 +348,8 @@ const laminaMaterial = new LayerMaterial({
 
 	.options {
 		display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+		justify-content: space-between;
+		align-items: flex-start;
 		width: 100%;
 		margin: 0.75rem 0 0.25rem;
 	}
