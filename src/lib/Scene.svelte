@@ -21,7 +21,7 @@
 	background={new THREE.Color($sceneSettings.background)}
 	antialias
 >
-	<SC.PerspectiveCamera position={[0, 5, 8]} near={0.1} far={400} fov={55} />
+	<SC.PerspectiveCamera position={[0, 2, 5]} near={0.1} far={400} fov={55} />
 
 	<SC.OrbitControls
 		enabled={true}

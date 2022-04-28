@@ -1,5 +1,5 @@
 <script>
-	import { layers, cookRecipe } from '../data/state';
+	import { layers } from '../data/state';
 	import BaseLayerForm from './forms/BaseLayerForm.svelte';
 	import DepthForm from './forms/DepthForm.svelte';
 	import FresnelForm from './forms/FresnelForm.svelte';
@@ -9,12 +9,14 @@
 	import GradientForm from './forms/GradientForm.svelte';
 	import ColorForm from './forms/ColorForm.svelte';
 	import SceneForm from './forms/SceneForm.svelte';
-	// import { eclipse, laminaPink, partlyCloudy, laminaBubble, laminaMarble, whiteNoise, laminaSparkles} from '../data/recipes';
+	import RecipeDialog from './RecipeDialog.svelte';
+
+	// cookRecipe(laminaSparkles)
 </script>
 
-<div class="ctrl-wrapper">
+<div class="ctrl-wrapper space-between">
 	<NewLayerButton />
-	<!-- <button on:click={() => cookRecipe(laminaSparkles)}>Recipes</button> -->
+	<RecipeDialog />
 </div>
 <div class="layers-wrapper">
 	<div class="ctrl-wrapper">
@@ -51,5 +53,12 @@
 		max-height: calc(100% - 4rem);
 		overflow: auto;
 		padding: 0 0.25rem 0 0;
+	}
+
+	.space-between {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0 .25rem 0 0;
 	}
 </style>

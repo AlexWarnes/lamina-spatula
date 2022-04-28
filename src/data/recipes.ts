@@ -1,7 +1,13 @@
 import * as THREE from 'three';
 import { Depth, Noise, Fresnel, Color, Displace } from 'lamina/vanilla';
+import type { Recipe } from './models';
 
 export const eclipse = {
+	name: 'Eclipse',
+	src: '/recipes/eclipse.jpg',
+	alt: "Dark 3D sphere that looks like a total solar eclipse",
+	accentColor: "#dbdeff",
+	credit: 'Spatula',
 	layerProps: [],
 	scene: {
 		background: '#161616'
@@ -19,9 +25,14 @@ export const eclipse = {
 			bias: 0
 		})
 	]
-};
+} as Recipe
 
 export const partlyCloudy = {
+	name: 'Partly Cloudy',
+	src: '/recipes/partlyCloudy.jpg',
+	alt: "Blue-ish 3D sphere with white cloud-like swirls over a green background.",
+	accentColor: "#709978",
+	credit: 'Spatula',
 	layerProps: [
 		{
 			type: 'curl'
@@ -49,9 +60,14 @@ export const partlyCloudy = {
 			visible: true
 		})
 	]
-};
+} as Recipe;
 
 export const whiteNoise = {
+	name: 'White Noise',
+	src: '/recipes/whiteNoise.jpg',
+	alt: "A 3D sphere with tiny contrasting squares like tv static.",
+	accentColor: "#d4f8ff",
+	credit: 'Lamina',
 	layerProps: [null, { mode: 'multiply' }, { mode: 'softlight' }, { type: 'white' }],
 	scene: {
 		background: '#ebebeb',
@@ -89,8 +105,13 @@ export const whiteNoise = {
 			type: 'white'
 		})
 	]
-};
+} as Recipe;
 export const laminaMarble = {
+	name: 'Marble',
+	src: '/recipes/marble.jpg',
+	alt: "A blue and purple 3D sphere.",
+	accentColor: "#d8c7ff",
+	credit: 'Lamina',
 	layerProps: [
 		{
 			mode: 'multiply'
@@ -122,8 +143,13 @@ export const laminaMarble = {
 			visible: true
 		})
 	]
-};
+} as Recipe;
 export const laminaBubble = {
+	name: 'Bubble',
+	src: '/recipes/bubble.jpg',
+	alt: "A saturated blue 3D sphere over a blue background.",
+	accentColor: "#2114db",
+	credit: 'Lamina',
 	layerProps: [
 		{
 			mode: 'multiply'
@@ -134,7 +160,7 @@ export const laminaBubble = {
 		}
 	],
 	scene: {
-		background: '#2114db',
+		background: '#2114db'
 	},
 	baseLayer: {
 		color: '#ffffff',
@@ -168,8 +194,13 @@ export const laminaBubble = {
 			visible: true
 		})
 	]
-};
+} as Recipe;
 export const laminaPink = {
+	name: 'Pink Glow',
+	src: '/recipes/pinkGlow.jpg',
+	alt: "A pink and purple 3D sphere.",
+	accentColor: "#f0aed2",
+	credit: 'Lamina',
 	layerProps: [
 		{
 			mode: 'multiply',
@@ -185,10 +216,10 @@ export const laminaPink = {
 	],
 	scene: {
 		background: '#f0aed2',
-    ACESFilmicToneMapping: true,
+		ACESFilmicToneMapping: true
 	},
 	baseLayer: {
-		color: '#ff4eb8',
+		color: '#ff4eb8'
 		// lighting: 'basic'
 	},
 	layers: [
@@ -214,13 +245,18 @@ export const laminaPink = {
 			mode: 'softlight'
 		})
 	]
-};
+} as Recipe;
 
 export const laminaSparkles = {
+	name: 'Sparkles',
+	src: '/recipes/sparkles.jpg',
+	alt: "A pink and purple 3D sphere with cyan sparkles.",
+	accentColor: "#68eefb",
+	credit: 'Lamina',
 	layerProps: [null, { mode: 'screen' }, { mode: 'softlight' }, { mode: 'lighten' }],
 	scene: {
 		background: '#cccce6',
-		autoRotate: true,
+		autoRotate: true
 	},
 	baseLayer: {
 		color: '#fefefe',
@@ -259,3 +295,12 @@ export const laminaSparkles = {
 	]
 };
 
+export const recipes = [
+	eclipse,
+	laminaPink,
+	partlyCloudy,
+	laminaBubble,
+	laminaMarble,
+	whiteNoise,
+	laminaSparkles
+];

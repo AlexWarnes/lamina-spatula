@@ -56,6 +56,13 @@ input.vec3 {
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #fafbfc35;
+	background: var(--svelte-orange);
 	opacity: 0.5;
+}
+
+.dialog{
+	background-color: var(--canvas-overlay) !important;
+	padding: 0 !important;
+	border: none !important;
+	box-shadow: 2px 2px 18px black !important;
 }

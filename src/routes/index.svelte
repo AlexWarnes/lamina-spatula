@@ -100,7 +100,7 @@
 		padding: 0 0 3rem 0;
 	}
 	header {
-		background: #fafbfc;
+		background: #fff1ef;
 		padding: 10%;
 		display: flex;
 		flex-direction: column;
