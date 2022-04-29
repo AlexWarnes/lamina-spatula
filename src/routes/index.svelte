@@ -152,7 +152,7 @@
 	}
 
 	a.canvas-link {
-		background-color: darkcyan;
+		background-color: var(--accent);
 		font-size: 1rem;
 		padding: 1rem 1.5rem;
 	}

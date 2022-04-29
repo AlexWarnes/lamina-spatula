@@ -99,7 +99,7 @@
 	}
 
 	.cook-recipe-btn {
-		background-color: darkcyan;
+		background-color: var(--accent);
 		color: #fafbfc;
 		pointer-events: all;
 		border: 3px solid transparent;

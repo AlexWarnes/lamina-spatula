@@ -185,25 +185,31 @@ const laminaMaterial = new LayerMaterial({
 				</div>
 
 				<p class="description">
-					Lamina shader material code generated for your current set of layers. You can use this as
-					a material on any three.js object.
+					JavaScript generated for your current set of lamina layers. You can use this as
+					a material on any threejs object.
 				</p>
+				<p class="try-it-text">Try it with:</p>
 				<div class="repl-row">
 					<ul class="try-it">
-						<p class="description">Try it with:</p>
 						<li>
 							<a
-							href="https://codesandbox.io/s/hello-world-lamina-svelte-ymg0h5"
-							target="_blank"
-							rel="noopener noreferrer">Svelte Cubed</a
-						>
+								href="https://stackblitz.com/edit/sveltejs-kit-template-default-7ysygt-filesrc2froutes2fin?file=src/routes/index.svelte"
+								target="_blank"
+								rel="noopener noreferrer">Svelte Cubed</a
+							>
+							<!-- TODO: format to fit both
+								<a
+								href="https://codesandbox.io/s/hello-world-lamina-svelte-ymg0h5?file=/App.svelte"
+								target="_blank"
+								rel="noopener noreferrer">CodeSandbox</a
+							> -->
 						</li>
 						<li>
 							<a
-							href="https://codesandbox.io/s/hello-world-lamina-three-6qso8i"
-							target="_blank"
-							rel="noopener noreferrer">Vanilla Three</a
-						>	
+								href="https://codesandbox.io/s/spatula-lamina-three-6qso8i?file=/src/index.js"
+								target="_blank"
+								rel="noopener noreferrer">Vanilla Three</a
+							>
 						</li>
 					</ul>
 
@@ -253,7 +259,7 @@ const laminaMaterial = new LayerMaterial({
 		justify-content: center;
 		align-items: center;
 		background-color: var(--canvas-overlay);
-		border-bottom: 2px solid darkcyan;
+		border-bottom: 2px solid var(--accent);
 		cursor: pointer;
 	}
 	.control-bar > p {
@@ -275,14 +281,14 @@ const laminaMaterial = new LayerMaterial({
 		margin: 0 0 0 1rem;
 	}
 
-	ul.try-it .description {
+	.try-it-text {
 		margin: 0 0 0.5rem;
 	}
 
 	ul.try-it {
 		margin: 0;
 		padding: 0;
-    list-style: none;
+		list-style: none;
 	}
 
 	ul.try-it li {
@@ -336,7 +342,7 @@ const laminaMaterial = new LayerMaterial({
 		cursor: pointer;
 	}
 	.copy-btn.success {
-		border: 2px solid darkcyan;
+		border: 2px solid var(--accent);
 	}
 
 	.icon-wrapper {

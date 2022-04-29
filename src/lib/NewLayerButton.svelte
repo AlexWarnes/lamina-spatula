@@ -60,7 +60,7 @@
 		/* top: 1rem;
 		right: 20rem; */
 		border: none;
-		background-color: darkcyan;
+		background-color: var(--accent);
 		color: #fafbfc;
 		pointer-events: all;
 		border: 3px solid transparent;

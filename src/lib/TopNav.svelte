@@ -5,17 +5,17 @@
 <nav>
 	<ul>
 		<li>
-			<a class="home" href="/">
+			<a class="home" href="/" title="Home" aria-label="Home">
 				<img src="./SpatulaLayers.svg" alt="Spatula over layers" height="48" width="48" />
 				<span>SPATULA</span>
 			</a>
 		</li>
-		<span class="spacer" />
+		<span class="spacer" aria-hidden="true" />
 		<li>
-			<a href="/canvas">CANVAS</a>
+			<a href="/canvas" aria-label="Canvas">CANVAS</a>
 		</li>
 		<li class="last">
-			<a href="https://github.com/AlexWarnes/lamina-spatula">
+			<a href="https://github.com/AlexWarnes/lamina-spatula" title="GitHub" aria-label="GitHub">
 				<GitHub />
 			</a>
 		</li>
