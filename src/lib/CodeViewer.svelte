@@ -193,7 +193,7 @@ const laminaMaterial = new LayerMaterial({
 					<ul class="try-it">
 						<li>
 							<a
-								href="https://stackblitz.com/edit/sveltejs-kit-template-default-7ysygt-filesrc2froutes2fin?file=src/routes/index.svelte"
+								href="https://stackblitz.com/edit/spatula-lamina-svelte?file=src/routes/index.svelte"
 								target="_blank"
 								rel="noopener noreferrer">Svelte Cubed</a
 							>
