@@ -1,38 +1,31 @@
-# create-svelte
+# SPATULA
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A tool for building shader materials without the need to stand up a new project. Inspired by the official lamina debugger, it allows for layer editing and generates the JavaScript for your material. You can use that code as a material in any project that uses lamina and threejs.
 
-## Creating a project
+Made with SvelteKit, lamina, threejs, svelte-cubed, and RxJS
 
-If you're seeing this, you've probably already done this step. Congrats!
+## What is lamina? 🍰
+From the docs: "Lamina let's you create materials with a declarative system of layers. Layers make it incredibly easy to stack and blend effects."
 
-```bash
-# create a new project in the current directory
-npm init svelte
+Learn more: https://github.com/pmndrs/lamina
 
-# create a new project in my-app
-npm init svelte my-app
+## Where can I use the generated code?
+Anywhere you're using lamina and threejs!
+
+**vanilla js:**
+```javascript
+const mesh = new THREE.Mesh(geometry, laminaMaterial)
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+**svelte-cubed:**
+```html
+<SC.Mesh {geometry} material={laminaMaterial} />
 ```
 
-## Building
+While Spatula is for creating materials, I made a separate tool for creating 3d scenes with and generating code called SC3 Lab.
 
-To create a production version of your app:
+https://sc3-lab.netlify.app
 
-```bash
-npm run build
-```
+## What if I'm using React?
+If you have a react-three-fiber project, you'll be better off using lamina's r3f imports instead of the vanilla js code. The official debugger allows more fine tuning and JSX code copying. There's a whole suite of amazing tools available for r3f from the Poimandres collective: https://github.com/pmndrs
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
