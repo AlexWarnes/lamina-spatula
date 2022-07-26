@@ -27,7 +27,7 @@
 			lamina debugger, it allows for layer editing and generates the JavaScript for your material.
 			You can use that code as a material in any project that uses lamina and threejs.
 		</p>
-		<p>Made with SvelteKit, lamina, threejs, svelte-cubed, and RxJS</p>
+		<p>Made with SvelteKit, lamina, threejs, threlte, and RxJS</p>
 		<a href="https://github.com/AlexWarnes/lamina-spatula">
 			<span>GitHub Repo</span>
 			<ChevronRight height="16" />
@@ -49,29 +49,22 @@
 		<p>Anywhere you're using lamina and threejs!</p>
 		<p>vanilla js:</p>
 		<code>{`const mesh = new THREE.Mesh(geometry, laminaMaterial)`}</code>
-		<p>svelte-cubed:</p>
-		<code>{`<SC.Mesh {geometry} material={laminaMaterial} />`}</code>
-		<a href="https://svelte.dev/">
+		<p>threlte:</p>
+		<code>{`<Mesh {geometry} material={laminaMaterial} />`}</code>
+		<a href="https://svelte.dev/tutorial/basics">
 			<span>Learn Svelte</span>
 			<ChevronRight height="16" />
 		</a>
-		<a href="https://svelte.dev/">
-			<span>Learn Svelte</span>
+		<a href="https://threlte.xyz/">
+			<span>Learn threlte</span>
 			<ChevronRight height="16" />
 		</a>
-		<a href="https://svelte-cubed.vercel.app/">
-			<span>Learn Svelte-Cubed</span>
+		<a href="https://discoverthreejs.com/book/introduction/">
+			<span>Learn threejs</span>
 			<ChevronRight height="16" />
 		</a>
 
-		<p style="margin: 2rem 0 1rem">
-			While Spatula is for creating materials, I made a separate tool for creating 3d scenes with
-			and generating code called SC3 Lab.
-		</p>
-		<a href="https://sc3-lab.netlify.app/">
-			<span>Try SC3-Lab</span>
-			<ChevronRight height="16" />
-		</a>
+
 	</section>
 	<section>
 		<h2>What if I'm using React?</h2>
