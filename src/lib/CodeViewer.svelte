@@ -123,7 +123,7 @@ const laminaMaterial = new LayerMaterial({
       alpha: ${gradientProps.alpha},
       contrast: ${gradientProps.contrast},
       start: ${gradientProps.start},
-      end: "${gradientProps.end}",
+      end: ${gradientProps.end},
       axes: "${gradientProps.axes}",
       mapping: "${gradientProps.mapping}",
       visible: ${gradientProps.visible},
@@ -193,16 +193,17 @@ const laminaMaterial = new LayerMaterial({
 					<ul class="try-it">
 						<li>
 							<a
+								href="https://stackblitz.com/edit/spatula-lamina-threlte?file=src/lib/LaminaMesh.svelte"
+								target="_blank"
+								rel="noopener noreferrer">Threlte</a
+							>
+						</li>
+						<li>
+							<a
 								href="https://stackblitz.com/edit/spatula-lamina-svelte?file=src/routes/index.svelte"
 								target="_blank"
 								rel="noopener noreferrer">Svelte Cubed</a
 							>
-							<!-- TODO: format to fit both
-								<a
-								href="https://codesandbox.io/s/hello-world-lamina-svelte-ymg0h5?file=/App.svelte"
-								target="_blank"
-								rel="noopener noreferrer">CodeSandbox</a
-							> -->
 						</li>
 						<li>
 							<a
