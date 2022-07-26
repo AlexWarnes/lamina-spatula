@@ -10,7 +10,7 @@ import {
 	extractNoiseProps,
 	mutateCommonProps
 } from './layers';
-import { rxWritable } from 'svelte-fuse-rx';
+// import { rxWritable } from 'svelte-fuse-rx';
 
 const defaultSceneSettings = {
 	background: '#36363f',
