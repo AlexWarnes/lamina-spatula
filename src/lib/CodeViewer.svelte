@@ -193,7 +193,7 @@ const laminaMaterial = new LayerMaterial({
 					<ul class="try-it">
 						<li>
 							<a
-								href="https://stackblitz.com/edit/spatula-lamina-threlte?file=src/routes/index.svelte"
+								href="https://stackblitz.com/edit/spatula-lamina-threlte?file=src/lib/LaminaMesh.svelte"
 								target="_blank"
 								rel="noopener noreferrer">Threlte</a
 							>
